@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom'
 const LogIn = (props) => {
   const [credentials, setCredentials] = useState({ email: "", password: "" })
   const navigate = useNavigate();
-  const host = "https://notebook-backend-ydvu.onrender.com"
+  // const host = "https://notebook-backend-ydvu.onrender.com"
   const handleSubmit = async (e) => {
     try {
-      const response = await fetch(`${host}/api/auth/login`, {
+      const response = await fetch("https://notebook-backend-ydvu.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

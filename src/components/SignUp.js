@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom';
 const SignUp = (props) => {
   const [credentials,setCredentials] = useState({name: "",email: "",password:"",cpassword: ""})
     const navigate = useNavigate();
-    const host = "https://notebook-backend-ydvu.onrender.com" 
+    // const host = "https://notebook-backend-ydvu.onrender.com" 
     const handleSubmit = async (e) =>{
         e.preventDefault();
         const  {name,email,password} = credentials;
-        const response = await fetch(`${host}/api/auth/createuser`, {
+        const response = await fetch("https://notebook-backend-ydvu.onrender.com/api/auth/createuser", {
           
             method: "POST",
             headers: {
