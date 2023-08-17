@@ -1,7 +1,7 @@
 import { useState } from "react"
 import NoteContext from "./noteContext"
 const NoteState = (props) => {
-    const host = "https://notebook-backend-ydvu.onrender.com/"
+    const host = "https://notebook-backend-ydvu.onrender.com"
     const notesInitial = []
     const [notes, setNotes] = useState(notesInitial)
 
