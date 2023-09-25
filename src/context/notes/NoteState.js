@@ -1,5 +1,6 @@
 import { useState } from "react"
 import NoteContext from "./noteContext"
+
 const NoteState = (props) => {
     const host = "https://notebook-backend-ydvu.onrender.com"
     const notesInitial = []
@@ -71,16 +72,6 @@ const NoteState = (props) => {
         const json = await response.json();
         console.log(json);
         let newNotes = JSON.parse(JSON.stringify(notes))
-        // for (let index = 0; index < newNotes.length; index++) {
-        //     const element = newNotes[index];
-
-        //     if (element._id === id) {
-        //         newNotes[index].title = title;
-        //         newNotes[index].description = description;
-        //         newNotes[index].tag = tag;
-        //         break;
-        //     }
-        // }
 
         const noteIndex = newNotes.findIndex(note => note._id === id);
         if (noteIndex !== -1) {
@@ -100,13 +91,3 @@ const NoteState = (props) => {
 }
 
 export default NoteState;
-
-
-// const response = await fetch(url, {
-//     method: "POST",.
-//    headers: {
-//       "Content-Type": "application/json",
-//    },
-//     body: JSON.stringify(data),
-//   });
-//   return response.json(); 
